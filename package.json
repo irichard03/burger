@@ -1,0 +1,25 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "Node Server App practicing makign a RESTful ap using Hanlebards, Express and storing data using MySql.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irichard03/burger.git"
+  },
+  "author": "Ian Richard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/irichard03/burger/issues"
+  },
+  "homepage": "https://github.com/irichard03/burger#readme",
+  "dependencies": {
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.16.0"
+  }
+}
