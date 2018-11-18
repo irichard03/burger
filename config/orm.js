@@ -1,12 +1,12 @@
-const connection = require('connection');
+const connection = require('../config/connection.js');
 
 
-
+//THE ORM  CONTROLS MY QUERIES.
 const orm = {
     //method for selecting all rows in the database, callback for results.
-    selectAll: function(column1,table,callback) {
+    selectAll: function(column,table,callback) {
         let myQuery = "SELECT ?? FROM ??;";
-        connection.query(myQuery,[column1,table],function(err,result){
+        connection.query(myQuery,[column,table],function(err,result){
             if(err){
                 throw(err);
             }
@@ -19,6 +19,6 @@ const orm = {
     //TODO updateOne
 
 
-}
+};
 
 module.exports = orm;
