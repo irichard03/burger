@@ -4,7 +4,7 @@
 <div class="container">
     <div class="currentMenu">
         <ul>
-        {{#each burger}}
+        {{#each burgers}}
             {{burger_name}}
         {{/each}}
         </ul>
@@ -12,8 +12,8 @@
     <h2>Burgers that have been Eaten</h2>
     <div class="nomNomList"></div>
         <ul>
-        {{#each burger}}
-           <li>{{this}}</li>
+        {{#each burgers}}
+           <li>{{burger_name}}</li>
         {{/each}}
         </ul>
     </div>
@@ -32,3 +32,12 @@
     <button type="submit">Add Burger</button>
     </form>
 </div>
+<script>
+     $.ajax({
+         url: "/",
+         method: "GET",
+         data: burgerList
+     }).then(function(response) {
+         
+     });
+</script>
