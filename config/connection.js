@@ -2,6 +2,7 @@ require('dotenv').config();
 const mysql = require('mysql');
 
 //Connection configures and conencts my database.
+const connection;
 
 if(process.env.NODE_ENV === 'production'){
     mysql.createConnection(process.env.JAWSDB_URL);
@@ -15,9 +16,6 @@ if(process.env.NODE_ENV === 'production'){
             database: 'burgers_db'
         });
     }
-
-
-
 
 connection.connect(function(err) {
     if(err) {
