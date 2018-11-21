@@ -30,18 +30,9 @@
 
     <div class="form-group">
         <label for="burgerAdd">Burger Name:</label>
-        <input type="text" id="burgerAdd" name="name">
+        <input type="text" id="burgerAdd">
     </div>
 
-    <button type="submit">Add Burger</button>
+    <button type="submit" id="addButton">Add Burger</button>
     </form>
 </div>
-<script>
-     $.ajax({
-         url: "/",
-         method: "GET",
-         data: burgerList
-     }).then(function(response) {
-         
-     });
-</script>

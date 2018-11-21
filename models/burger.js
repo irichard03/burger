@@ -14,6 +14,12 @@ const burger = {
         });
     },
 
+    create : function(callback) {
+        orm.create("burger_name", "devoured", function(response){
+        callback(response);
+        });
+    }
+
     //todo additional functions
 
 };
