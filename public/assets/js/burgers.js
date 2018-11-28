@@ -1,9 +1,7 @@
 $(function(){
 
-
     $(".create-form").on("submit", function(event) {
         event.preventDefault();
-
         let newBurger = {
             burger_name: $("#burgerAdd").val().trim(),
             devoured: 0
@@ -15,7 +13,6 @@ $(function(){
         }).then(
             function() {
             console.log("Added Burger!");
-            // Reload the page to get the updated list
             location.reload();
             }
         );
@@ -31,9 +28,7 @@ $(function(){
             data: eatenStatus
         }).then(
             function() {
-            console.log("BURGER " + id +  " NOM NOM!");
-            // Reload the page to get the updated list
-            
+            location.reload();
             }
         );
         

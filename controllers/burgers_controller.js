@@ -24,7 +24,6 @@ router.put("/api/burgers/:id", function(request,response) {
     let burgerId = parseInt(request.params.id);
     burger.update(burgerId,function(result){
         if(result.affecteRows == 0) {
-            console.log("Error: " + bugerId + " is an invalid burger id.");
             return response.status(404).end();
         }
         else{
@@ -32,7 +31,5 @@ router.put("/api/burgers/:id", function(request,response) {
             }
     });
 });
-
-
 
 module.exports = router;
