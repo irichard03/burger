@@ -21,4 +21,22 @@ $(function(){
         );
         
     });
+
+    $(".deleteButton").click(function(event) {
+        let id = $(this).data("id");
+        let eatenStatus = 1;
+
+        $.ajax("/api/burgers/" + id, {
+            type: "PUT",
+            data: eatenStatus
+        }).then(
+            function() {
+            console.log("BURGER " + id +  " NOM NOM!");
+            // Reload the page to get the updated list
+            
+            }
+        );
+        
+    });
+
 });

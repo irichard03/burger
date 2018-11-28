@@ -4,9 +4,9 @@ const connection = require('../config/connection.js');
 //THE ORM  CONTROLS MY QUERIES.
 const orm = {
     //method for selecting all rows in the database, callback for results.
-    selectAll: function(column,column2,table,callback) {
-        let myQuery = "SELECT ??, ?? FROM ??;";
-        connection.query(myQuery,[column, column2,table],function(err,result){
+    selectAll: function(column,column2,column3,table,callback) {
+        let myQuery = "SELECT ??, ??, ?? FROM ??;";
+        connection.query(myQuery,[column, column2,column3, table],function(err,result){
             if(err){
                 throw(err);
             }
@@ -16,35 +16,26 @@ const orm = {
 
     //This is the orm from cat js copied just to see if I can get it to work with straight refactoring.
 
-    create: function(table,burgerName,isEaten, cb) {
+    create: function(table,burgerName,isEaten, callback) {
         let queryString = "INSERT INTO " + table + " (burger_name,devoured) VALUES( '" + burgerName + "', '" + isEaten + "');";
         connection.query(queryString, function(err, result) {
           if (err) {
             throw err;
           }
-        cb(result);
+        callback(result);
         });
 
-    }
-    //THIS IS MY function that throws error callback is not a function.
-    /**
-    create: function(value,value2, callback){
-        let queryString = "INSERT INTO burgers (burger_name,devoured) VALUES(" + value + "," + value2 + ");";
-        console.log(queryString);
-        connection.query(queryString, value1, value2, function(err, result){
-            
+    },
+    
+    update: function(table,burgerId,callback){
+        let queryString = "UPDATE " + table + " SET devoured = 0 WHERE id = " + burgerId + " ;";
+        connection.query(queryString, function(err,result){
             if(err) {
                 throw err;
-            }   
+            }
             callback(result);
         });
-    }
-    **/
-    //TODO insertOne
-
-    //TODO updateOne
-
-
+    },
 };
 
 module.exports = orm;

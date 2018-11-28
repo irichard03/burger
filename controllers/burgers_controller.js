@@ -20,4 +20,19 @@ router.post("/api/burgers", function(request,response) {
     });
 });
 
+router.put("/api/burgers/:id", function(request,response) {
+    let burgerId = parseInt(request.params.id);
+    burger.update(burgerId,function(result){
+        if(result.affecteRows == 0) {
+            console.log("Error: " + bugerId + " is an invalid burger id.");
+            return response.status(404).end();
+        }
+        else{
+                response.status(200).end();
+            }
+    });
+});
+
+
+
 module.exports = router;
