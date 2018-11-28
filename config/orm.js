@@ -11,21 +11,17 @@ const orm = {
                 throw(err);
             }
             callback(result);
-            console.log(result);
         });
     },
 
     //This is the orm from cat js copied just to see if I can get it to work with straight refactoring.
 
-    create: function(val,val2, cb) {
-        var queryString = "INSERT INTO burgers (burger_name,devoured) VALUES( ?, ?);";
-    
-
-        connection.query(queryString, val, val2, function(err, result) {
+    create: function(table,burgerName,isEaten, cb) {
+        let queryString = "INSERT INTO " + table + " (burger_name,devoured) VALUES( '" + burgerName + "', '" + isEaten + "');";
+        connection.query(queryString, function(err, result) {
           if (err) {
             throw err;
           }
-    
         cb(result);
         });
 

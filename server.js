@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 
 //server listens for client requets.
-const PORT = process.env.SERVERPORT || 3000;
+const PORT = process.env.SERVERPORT || 5000;
 
 const app = express();
 
@@ -28,4 +28,3 @@ app.use(routes);
 app.listen(PORT, function(){
     console.log("Running...");
 });
-

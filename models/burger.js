@@ -13,8 +13,9 @@ const burger = {
         });
     },
 
-    create : function(callback) {
-        orm.create("burger_name", "devoured", function(response){
+    create : function(burgerName, devoured, callback) {
+        let isEaten = parseInt(devoured);
+        orm.create("burgers",burgerName,isEaten, function(response){
         callback(response);
         });
     }
