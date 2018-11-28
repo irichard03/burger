@@ -1,0 +1,45 @@
+body {
+    background-color: maroon;
+
+}
+
+.container{
+    background-color: black;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;   
+}
+
+.deleteButton {
+    display: inline-block;
+    margin-left: 20px;
+    background-color: white;
+
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    
+}
+
+h2 {
+    color: black;
+    background-color: darkgrey;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h3{
+    text-align: center;
+}
+
+.left{
+   display: inline-block;
+}
+
+.right{
+    display: inline-block;
+}

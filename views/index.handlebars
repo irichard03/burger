@@ -1,17 +1,16 @@
 <h1>Burger NOM NOM</h1>
-
 <h2>Current  Burger Menu</h2>
 <div class="container">
     <div class="currentMenu">
         <ul>
         {{#each burgers}}
             {{#unless devoured}}
-                <li>{{burger_name}}<button data-id={{id}} class='deleteButton'>Eat me!</button></li>
+                <li>{{burger_name}}</li><button data-id={{id}} class='deleteButton'>Eat me!</button>
             {{/unless}}            
         {{/each}}
         </ul>
     </div>
-    <h2>Burgers that have been Eaten</h2>
+    <h3>Burgers that have been Eaten</h3>
     <div class="nomNomList"></div>
         <ul>
         {{#each burgers}}
